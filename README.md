@@ -1,1 +1,2 @@
-# ambigai-tourism1
+# Ambigai Tourism
+Starter website.
