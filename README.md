@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ambigi Tourism Ooty | Premium Cab & Tour Services</title>
+    <title>Ambigai Tourism Ooty | Premium Cab & Tour Services</title>
     <!-- Tailwind CSS for sleek styling -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome for professional icons -->
@@ -21,13 +21,11 @@
     <!-- Navbar -->
     <nav class="bg-white shadow-xs sticky top-0 z-50 border-b border-slate-100">
         <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- Professional Text Logo with Badge Icon -->
-            <a href="#" class="flex items-center gap-2 group">
-                <div class="bg-emerald-600 text-white p-2.5 rounded-xl shadow-xs group-hover:bg-emerald-700 transition">
-                    <i class="fa-solid fa-mountain-sun text-xl"></i>
-                </div>
+            <!-- Customized Image Logo Brand Layout -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="image_4.png" alt="Ambigai Tourism Logo" class="h-11 w-11 rounded-full object-cover shadow-xs border border-slate-100 group-hover:scale-105 transition duration-200">
                 <div class="flex flex-col">
-                    <span class="text-xl font-black tracking-tight text-slate-900 leading-none">AMBIGI</span>
+                    <span class="text-xl font-black tracking-tight text-slate-900 leading-none">AMBIGAI</span>
                     <span class="text-xs font-bold text-emerald-600 tracking-widest mt-0.5 uppercase">Tourism Ooty</span>
                 </div>
             </a>
@@ -50,7 +48,7 @@
             <span class="bg-emerald-500/20 text-emerald-300 text-sm font-bold px-4 py-1.5 rounded-full uppercase tracking-wider border border-emerald-500/30 backdrop-blur-xs inline-block mb-4">
                 Premium Mountain Cabs
             </span>
-            <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tight drop-shadow-md">Experience Ooty with Ambigi Tourism</h1>
+            <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tight drop-shadow-md">Experience Ooty with Ambigai Tourism</h1>
             <p class="text-lg md:text-xl mb-8 text-slate-200 font-medium">Safe, reliable, and premium local sightseeing cabs managed by professional local drivers.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#booking" class="bg-green-500 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-green-600 transition inline-flex items-center justify-center gap-3 shadow-lg">
@@ -71,58 +69,73 @@
         </div>
         
         <div class="grid md:grid-cols-3 gap-8">
-            <!-- Sedan -->
-            <div class="bg-white border border-slate-100 rounded-2xl shadow-xs overflow-hidden transition hover:shadow-md">
+            <!-- Sedan (image_6.png) -->
+            <div class="bg-white border border-slate-100 rounded-2xl shadow-xs overflow-hidden transition hover:shadow-md flex flex-col">
+                <div class="h-48 overflow-hidden bg-slate-100 border-b border-slate-100">
+                    <img src="image_6.png" alt="Premium Sedan Class Cabs" class="w-full h-full object-cover object-center hover:scale-105 transition duration-300">
+                </div>
                 <div class="p-6 bg-slate-50 border-b border-slate-100 font-bold flex justify-between items-center text-slate-900">
                     <span class="text-lg">Sedan Class</span>
                     <span class="text-xs bg-slate-200 text-slate-700 px-3 py-1 rounded-md font-semibold">4+1 Seater</span>
                 </div>
-                <div class="p-6">
-                    <p class="text-sm text-slate-500 mb-4 font-medium">Ideal options: Maruti Suzuki Dzire, Toyota Etios</p>
-                    <ul class="space-y-3.5 text-slate-600 text-sm mb-6">
-                        <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Best for couples and small family trips</li>
-                        <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Chilled air conditioning & neat seats</li>
-                        <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Smooth driving over hairpin curves</li>
-                    </ul>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <p class="text-sm text-slate-500 mb-4 font-medium">Ideal options: Maruti Suzuki Dzire, Toyota Etios</p>
+                        <ul class="space-y-3.5 text-slate-600 text-sm mb-6">
+                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Best for couples and small family trips</li>
+                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Chilled air conditioning & neat seats</li>
+                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Smooth driving over hairpin curves</li>
+                        </ul>
+                    </div>
                     <div class="pt-4 border-t border-slate-100 text-emerald-700 font-bold text-sm tracking-wide uppercase">
                         <i class="fa-solid fa-tags mr-1"></i> Best Rates Guaranteed
                     </div>
                 </div>
             </div>
 
-            <!-- SUV -->
-            <div class="bg-white border-2 border-emerald-600 rounded-2xl shadow-sm overflow-hidden relative">
-                <div class="absolute top-0 right-0 bg-emerald-600 text-white text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-widest">Most Appreciated</div>
+            <!-- SUV (image_0.png) -->
+            <div class="bg-white border-2 border-emerald-600 rounded-2xl shadow-sm overflow-hidden relative flex flex-col">
+                <div class="absolute top-0 right-0 bg-emerald-600 text-white text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-widest z-10">Most Appreciated</div>
+                <div class="h-48 overflow-hidden bg-slate-100 border-b border-emerald-600">
+                    <img src="image_0.png" alt="Family SUV Cabs" class="w-full h-full object-cover object-center hover:scale-105 transition duration-300">
+                </div>
                 <div class="p-6 bg-emerald-600 text-white font-bold flex justify-between items-center">
                     <span class="text-lg">Premium SUV</span>
                     <span class="text-xs bg-emerald-700/50 text-white px-3 py-1 rounded-md font-semibold">6+1 Seater</span>
                 </div>
-                <div class="p-6">
-                    <p class="text-sm text-slate-400 mb-4 font-medium">Ideal options: Toyota Innova Crysta, Mahindra XUV</p>
-                    <ul class="space-y-3.5 text-slate-600 text-sm mb-6">
-                        <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Spacious legroom for hill climbs</li>
-                        <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Large roof carriers for heavy bags</li>
-                        <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Top chosen setup for families</li>
-                    </ul>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <p class="text-sm text-slate-400 mb-4 font-medium">Ideal options: Toyota Innova Crysta, Mahindra XUV</p>
+                        <ul class="space-y-3.5 text-slate-600 text-sm mb-6">
+                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Spacious legroom for hill climbs</li>
+                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Large roof carriers for heavy bags</li>
+                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Top chosen setup for families</li>
+                        </ul>
+                    </div>
                     <div class="pt-4 border-t border-slate-100 text-emerald-700 font-bold text-sm tracking-wide uppercase">
                         <i class="fa-solid fa-tags mr-1"></i> Best Rates Guaranteed
                     </div>
                 </div>
             </div>
 
-            <!-- Tempo -->
-            <div class="bg-white border border-slate-100 rounded-2xl shadow-xs overflow-hidden transition hover:shadow-md">
-                <div class="p-6 bg-slate-50 border-b border-slate-100 font-bold flex justify-between items-center text-slate-900">
-                    <span class="text-lg">Tempo Traveller</span>
-                    <span class="text-xs bg-slate-200 text-slate-700 px-3 py-1 rounded-md font-semibold">12+1 Seater</span>
+            <!-- Adventure Jeep (image_1.png) -->
+            <div class="bg-white border border-slate-100 rounded-2xl shadow-xs overflow-hidden transition hover:shadow-md flex flex-col">
+                <div class="h-48 overflow-hidden bg-slate-100 border-b border-slate-100">
+                    <img src="image_1.png" alt="Adventure Mountain Jeep" class="w-full h-full object-cover object-center hover:scale-105 transition duration-300">
                 </div>
-                <div class="p-6">
-                    <p class="text-sm text-slate-500 mb-4 font-medium">Ideal options: Force Luxury Traveller</p>
-                    <ul class="space-y-3.5 text-slate-600 text-sm mb-6">
-                        <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Perfect for corporate & marriage groups</li>
-                        <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Music systems & push-back recliners</li>
-                        <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Uniformly relaxed group site seeing</li>
-                    </ul>
+                <div class="p-6 bg-slate-50 border-b border-slate-100 font-bold flex justify-between items-center text-slate-900">
+                    <span class="text-lg">Adventure Jeep</span>
+                    <span class="text-xs bg-slate-200 text-slate-700 px-3 py-1 rounded-md font-semibold">Off-Road Group</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <p class="text-sm text-slate-500 mb-4 font-medium">Ideal options: Force Luxury Traveller / Mahindra Jeep</p>
+                        <ul class="space-y-3.5 text-slate-600 text-sm mb-6">
+                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Perfect for off-the-beaten-path tours</li>
+                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> High clearance built for rough terrains</li>
+                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Managed by expert native trail drivers</li>
+                        </ul>
+                    </div>
                     <div class="pt-4 border-t border-slate-100 text-emerald-700 font-bold text-sm tracking-wide uppercase">
                         <i class="fa-solid fa-tags mr-1"></i> Best Rates Guaranteed
                     </div>
@@ -155,7 +168,7 @@
                         <select id="car" class="w-full border border-slate-200 rounded-xl p-3.5 text-sm bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 transition">
                             <option value="Sedan Car Class (4+1 Seater)">Sedan Class (Dzire / Etios)</option>
                             <option value="Premium Family SUV (6+1 Seater)">Premium SUV (Innova)</option>
-                            <option value="Group Tempo Traveller (12+1 Seater)">Tempo Traveller (12+1)</option>
+                            <option value="Adventure Mountain Jeep Setup">Adventure Jeep Class</option>
                         </select>
                     </div>
                     <div>
@@ -180,7 +193,7 @@
     <section id="reviews" class="max-w-4xl mx-auto px-4 py-20">
         <div class="text-center max-w-2xl mx-auto mb-14">
             <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-2">Customer Review Session</h2>
-            <p class="text-slate-500">Read verified trip feedbacks from families who selected Ambigi Tourism Ooty.</p>
+            <p class="text-slate-500">Read verified trip feedbacks from families who selected Ambigai Tourism Ooty.</p>
         </div>
         
         <!-- Live review container list -->
@@ -195,7 +208,7 @@
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
                 </div>
-                <p class="text-slate-600 text-sm leading-relaxed">Booked Ambigi Tourism for an Ooty-Coonoor family vacation. The cab interiors were completely neat and clean, smelling very fresh. Our driver drove safely through deep mist along the steep bends.</p>
+                <p class="text-slate-600 text-sm leading-relaxed">Booked Ambigai Tourism for an Ooty-Coonoor family vacation. The cab interiors were completely neat and clean, smelling very fresh. Our driver drove safely through deep mist along the steep bends.</p>
             </div>
 
             <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-xs">
@@ -236,14 +249,13 @@
 
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-500 text-center py-10 border-t border-slate-800 text-xs font-medium">
-        <p class="mb-2">&copy; 2026 Ambigi Tourism Ooty. All Rights Reserved.</p>
+        <p class="mb-2">&copy; 2026 Ambigai Tourism Ooty. All Rights Reserved.</p>
         <p class="text-slate-600">Premium Tour Cab Operators & Local Nilgiri Sightseeing Experts.</p>
     </footer>
 
     <!-- Interactive Scripts Layout -->
     <script>
-        // Update this to your real phone number including your country dialing code (e.g., 91 for India)
-        const WHATSAPP_NUMBER = "919876543210"; 
+        const WHATSAPP_NUMBER = "919626172090"; 
 
         function sendToWhatsApp(event) {
             event.preventDefault();
@@ -253,8 +265,7 @@
             const car = document.getElementById('car').value;
             const packageTour = document.getElementById('package').value;
 
-            // Formulate structured request message layouts without fixed prices
-            const messageText = `Hello Ambigi Tourism Ooty! I would like to request custom rates for a cab itinerary Plan:%0A%0A` +
+            const messageText = `Hello Ambigai Tourism Ooty! I would like to request custom rates for a cab itinerary Plan:%0A%0A` +
                                 `• *Client Name:* ${encodeURIComponent(name)}%0A` +
                                 `• *Travel Date:* ${encodeURIComponent(date)}%0A` +
                                 `• *Vehicle Type:* ${encodeURIComponent(car)}%0A` +
@@ -292,7 +303,6 @@
             const container = document.getElementById('reviewsContainer');
             container.insertBefore(newReview, container.firstChild);
 
-            // Resetting fields
             document.getElementById('revName').value = '';
             document.getElementById('revText').value = '';
         }
