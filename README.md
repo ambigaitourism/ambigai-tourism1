@@ -5,7 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ambigai Tourism Ooty | Premium Cab & Tour Services</title>
     <!-- Tailwind CSS for sleek styling -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="✅ Premium homepage
+✅ Your logo
+✅ Your uploaded cab images
+✅ Ooty background
+✅ Fleet (Sedan, SUV, Ertiga, Innova, Tempo Traveller, 4–25 Seater)
+✅ Simple booking form
+✅ WhatsApp booking
+✅ Customer reviews
+✅ Gallery
+✅ Tour packages
+✅ About & Contact
+✅ Mobile responsive
+✅ Premium animations
+✅ GitHub-ready ZIP"></script>
     <!-- FontAwesome for professional icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
