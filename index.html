@@ -1,311 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ambigai Tourism Ooty | Premium Cab & Tour Services</title>
-    <!-- Tailwind CSS for sleek styling -->
-    <script src="https://github.com/ambigaitourism/ambigai-tourism1/blob/main/eaac7455-7160-4c3c-bb06-59ea15ce22eb.jpeg?raw=true"></script>
-    <!-- FontAwesome for professional icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .hero-bg {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.7)), url('https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTCpR2N8v4_YzHQ2I_QFWgs3U7AOBa5v08yi9l1ILAEQxPIjzOYVeymQWB14KyazM2p40XEnEomOq0hujo');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ambigai Tourism | Ooty Travels</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#f8f9fa;
+color:#333;
+}
+
+header{
+background:#0d3b66;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:55px;
+height:55px;
+border-radius:50%;
+}
+
+.logo h2{
+color:white;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:500;
+}
+
+.hero{
+height:90vh;
+background:url("hero.jpg") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+}
+
+.hero-content{
+position:relative;
+color:white;
+}
+
+.hero h1{
+font-size:55px;
+}
+
+.hero p{
+margin:20px 0;
+font-size:20px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 30px;
+background:#ff9800;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+section{
+padding:70px 8%;
+}
+
+.title{
+text-align:center;
+font-size:35px;
+margin-bottom:40px;
+color:#0d3b66;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card h3{
+padding:15px;
+}
+
+.card p{
+padding:0 15px 20px;
+}
+
+.review{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.review h4{
+color:#ff9800;
+margin-bottom:10px;
+}
+
+.contact{
+background:#0d3b66;
+color:white;
+text-align:center;
+padding:50px;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+color:white;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+text-decoration:none;
+box-shadow:0 5px 10px rgba(0,0,0,.3);
+}
+
+footer{
+background:#08263d;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+</style>
+
 </head>
-<body class="bg-slate-50 font-sans text-slate-800">
+<body>
 
-    <!-- Navbar -->
-    <nav class="bg-white shadow-xs sticky top-0 z-50 border-b border-slate-100">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- Customized Image Logo Brand Layout -->
-            <a href="#" class="flex items-center gap-3 group">
-                <img src="image_4.png" alt="Ambigai Tourism Logo" class="h-11 w-11 rounded-full object-cover shadow-xs border border-slate-100 group-hover:scale-105 transition duration-200">
-                <div class="flex flex-col">
-                    <span class="text-xl font-black tracking-tight text-slate-900 leading-none">AMBIGAI</span>
-                    <span class="text-xs font-bold text-emerald-600 tracking-widest mt-0.5 uppercase">Tourism Ooty</span>
-                </div>
-            </a>
-            
-            <div class="hidden md:flex space-x-8 font-semibold text-slate-600">
-                <a href="#fleet" class="hover:text-emerald-600 transition">Our Fleet</a>
-                <a href="#booking" class="hover:text-emerald-600 transition">Book Cab</a>
-                <a href="#reviews" class="hover:text-emerald-600 transition">Traveler Reviews</a>
-            </div>
-            
-            <a href="#booking" class="bg-emerald-600 text-white px-5 py-2.5 rounded-xl font-bold hover:bg-emerald-700 transition shadow-xs hidden sm:block">
-                Plan Trip
-            </a>
-        </div>
-    </nav>
+<header>
 
-    <!-- Hero Section with Scenic Nilgiri Tea Estate Background -->
-    <header class="hero-bg h-[550px] flex items-center justify-center text-center text-white px-4">
-        <div class="max-w-3xl">
-            <span class="bg-emerald-500/20 text-emerald-300 text-sm font-bold px-4 py-1.5 rounded-full uppercase tracking-wider border border-emerald-500/30 backdrop-blur-xs inline-block mb-4">
-                Premium Mountain Cabs
-            </span>
-            <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tight drop-shadow-md">Experience Ooty with Ambigai Tourism</h1>
-            <p class="text-lg md:text-xl mb-8 text-slate-200 font-medium">Safe, reliable, and premium local sightseeing cabs managed by professional local drivers.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#booking" class="bg-green-500 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-green-600 transition inline-flex items-center justify-center gap-3 shadow-lg">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i> Chat & Book on WhatsApp
-                </a>
-                <a href="#fleet" class="bg-white/10 text-white border border-white/20 backdrop-blur-xs px-8 py-4 rounded-xl text-lg font-bold hover:bg-white/20 transition inline-flex items-center justify-center">
-                    View Fleet Cars
-                </a>
-            </div>
-        </div>
-    </header>
+<div class="logo">
+<img src="logo.webp">
+<h2>Ambigai Tourism</h2>
+</div>
 
-    <!-- Fleet Section (No Prices) -->
-    <section id="fleet" class="max-w-6xl mx-auto px-4 py-20">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">Our Well-Maintained Fleet</h2>
-            <p class="text-slate-500 text-base">From solo travelers to extended families, we have custom vehicle setups to match your comfort perfectly.</p>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Sedan (image_6.png) -->
-            <div class="bg-white border border-slate-100 rounded-2xl shadow-xs overflow-hidden transition hover:shadow-md flex flex-col">
-                <div class="h-48 overflow-hidden bg-slate-100 border-b border-slate-100">
-                    <img src="image_6.png" alt="Premium Sedan Class Cabs" class="w-full h-full object-cover object-center hover:scale-105 transition duration-300">
-                </div>
-                <div class="p-6 bg-slate-50 border-b border-slate-100 font-bold flex justify-between items-center text-slate-900">
-                    <span class="text-lg">Sedan Class</span>
-                    <span class="text-xs bg-slate-200 text-slate-700 px-3 py-1 rounded-md font-semibold">4+1 Seater</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <p class="text-sm text-slate-500 mb-4 font-medium">Ideal options: Maruti Suzuki Dzire, Toyota Etios</p>
-                        <ul class="space-y-3.5 text-slate-600 text-sm mb-6">
-                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Best for couples and small family trips</li>
-                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Chilled air conditioning & neat seats</li>
-                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Smooth driving over hairpin curves</li>
-                        </ul>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100 text-emerald-700 font-bold text-sm tracking-wide uppercase">
-                        <i class="fa-solid fa-tags mr-1"></i> Best Rates Guaranteed
-                    </div>
-                </div>
-            </div>
+<nav>
+<a href="#">Home</a>
+<a href="#">Fleet</a>
+<a href="#">Packages</a>
+<a href="#">Reviews</a>
+<a href="#">Contact</a>
+</nav>
 
-            <!-- SUV (image_0.png) -->
-            <div class="bg-white border-2 border-emerald-600 rounded-2xl shadow-sm overflow-hidden relative flex flex-col">
-                <div class="absolute top-0 right-0 bg-emerald-600 text-white text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-widest z-10">Most Appreciated</div>
-                <div class="h-48 overflow-hidden bg-slate-100 border-b border-emerald-600">
-                    <img src="image_0.png" alt="Family SUV Cabs" class="w-full h-full object-cover object-center hover:scale-105 transition duration-300">
-                </div>
-                <div class="p-6 bg-emerald-600 text-white font-bold flex justify-between items-center">
-                    <span class="text-lg">Premium SUV</span>
-                    <span class="text-xs bg-emerald-700/50 text-white px-3 py-1 rounded-md font-semibold">6+1 Seater</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <p class="text-sm text-slate-400 mb-4 font-medium">Ideal options: Toyota Innova Crysta, Mahindra XUV</p>
-                        <ul class="space-y-3.5 text-slate-600 text-sm mb-6">
-                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Spacious legroom for hill climbs</li>
-                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Large roof carriers for heavy bags</li>
-                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Top chosen setup for families</li>
-                        </ul>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100 text-emerald-700 font-bold text-sm tracking-wide uppercase">
-                        <i class="fa-solid fa-tags mr-1"></i> Best Rates Guaranteed
-                    </div>
-                </div>
-            </div>
+</header>
 
-            <!-- Adventure Jeep (image_1.png) -->
-            <div class="bg-white border border-slate-100 rounded-2xl shadow-xs overflow-hidden transition hover:shadow-md flex flex-col">
-                <div class="h-48 overflow-hidden bg-slate-100 border-b border-slate-100">
-                    <img src="image_1.png" alt="Adventure Mountain Jeep" class="w-full h-full object-cover object-center hover:scale-105 transition duration-300">
-                </div>
-                <div class="p-6 bg-slate-50 border-b border-slate-100 font-bold flex justify-between items-center text-slate-900">
-                    <span class="text-lg">Adventure Jeep</span>
-                    <span class="text-xs bg-slate-200 text-slate-700 px-3 py-1 rounded-md font-semibold">Off-Road Group</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <p class="text-sm text-slate-500 mb-4 font-medium">Ideal options: Force Luxury Traveller / Mahindra Jeep</p>
-                        <ul class="space-y-3.5 text-slate-600 text-sm mb-6">
-                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Perfect for off-the-beaten-path tours</li>
-                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> High clearance built for rough terrains</li>
-                            <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2.5"></i> Managed by expert native trail drivers</li>
-                        </ul>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100 text-emerald-700 font-bold text-sm tracking-wide uppercase">
-                        <i class="fa-solid fa-tags mr-1"></i> Best Rates Guaranteed
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="hero">
 
-    <!-- Interactive WhatsApp Booking Section -->
-    <section id="booking" class="bg-slate-900 text-white py-20">
-        <div class="max-w-3xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-3 tracking-tight">Request an Instant Quote</h2>
-            <p class="text-slate-400 text-center mb-10 max-w-xl mx-auto">Fill out details below. The tool auto-builds your reservation query message text directly to our WhatsApp agents.</p>
-            
-            <form onsubmit="sendToWhatsApp(event)" class="bg-white text-slate-800 p-8 rounded-2xl shadow-2xl space-y-6">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Full Name</label>
-                        <input type="text" id="name" required class="w-full border border-slate-200 rounded-xl p-3.5 text-sm bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 transition" placeholder="Your Name">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Trip Start Date</label>
-                        <input type="date" id="date" required class="w-full border border-slate-200 rounded-xl p-3.5 text-sm bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 transition">
-                    </div>
-                </div>
+<div class="hero-content">
 
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Preferred Vehicle</label>
-                        <select id="car" class="w-full border border-slate-200 rounded-xl p-3.5 text-sm bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 transition">
-                            <option value="Sedan Car Class (4+1 Seater)">Sedan Class (Dzire / Etios)</option>
-                            <option value="Premium Family SUV (6+1 Seater)">Premium SUV (Innova)</option>
-                            <option value="Adventure Mountain Jeep Setup">Adventure Jeep Class</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Sightseeing Plan</label>
-                        <select id="package" class="w-full border border-slate-200 rounded-xl p-3.5 text-sm bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 transition">
-                            <option value="Ooty Town Sightseeing Local Circuit">Ooty Local Sightseeing</option>
-                            <option value="Coonoor Day Tour Circuit">Coonoor Day Trip</option>
-                            <option value="Pykara Lake & Mudumalai Jungle Circuit">Pykara Lake & Mudumalai Tour</option>
-                            <option value="Custom Extended Itinerary / Airport Pickup">Custom Package / Pickup & Drop</option>
-                        </select>
-                    </div>
-                </div>
+<h1>Explore Ooty With Ambigai Tourism</h1>
 
-                <button type="submit" class="w-full bg-green-500 text-white font-bold py-4 rounded-xl shadow-md hover:bg-green-600 transition flex items-center justify-center gap-3 text-lg cursor-pointer">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i> Discuss Rates & Availabilities
-                </button>
-            </form>
-        </div>
-    </section>
+<p>Luxury Cab Service • Local Sightseeing • Outstation Trips</p>
 
-    <!-- Reviews Section -->
-    <section id="reviews" class="max-w-4xl mx-auto px-4 py-20">
-        <div class="text-center max-w-2xl mx-auto mb-14">
-            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-2">Customer Review Session</h2>
-            <p class="text-slate-500">Read verified trip feedbacks from families who selected Ambigai Tourism Ooty.</p>
-        </div>
-        
-        <!-- Live review container list -->
-        <div id="reviewsContainer" class="space-y-6 mb-12">
-            <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-xs">
-                <div class="flex justify-between items-start mb-3">
-                    <div>
-                        <h4 class="font-bold text-slate-900">Arun Kumar</h4>
-                        <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Visited June 2026</span>
-                    </div>
-                    <div class="text-amber-400 text-sm">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed">Booked Ambigai Tourism for an Ooty-Coonoor family vacation. The cab interiors were completely neat and clean, smelling very fresh. Our driver drove safely through deep mist along the steep bends.</p>
-            </div>
+<a class="btn"
+href="https://wa.me/919626172090?text=Hello%20Ambigai%20Tourism%20I%20want%20to%20book%20a%20cab">
+Book on WhatsApp
+</a>
 
-            <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-xs">
-                <div class="flex justify-between items-start mb-3">
-                    <div>
-                        <h4 class="font-bold text-slate-900">Meera Krishnan</h4>
-                        <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Visited May 2026</span>
-                    </div>
-                    <div class="text-amber-400 text-sm">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed">Wonderful behavior over WhatsApp. Transparent discussion with no hidden conditions. We got an excellent clean Innova right on time at our resort gate.</p>
-            </div>
-        </div>
+</div>
 
-        <!-- Submit Review Box -->
-        <div class="bg-slate-100/80 border border-slate-200/50 p-6 md:p-8 rounded-2xl">
-            <h3 class="text-lg font-bold mb-1 text-slate-900">Share Your Experience</h3>
-            <p class="text-xs text-slate-500 mb-5">Your public review helps fellow travelers secure honest cab services in Ooty.</p>
-            
-            <form onsubmit="addReview(event)" class="space-y-4">
-                <div class="grid md:grid-cols-2 gap-4">
-                    <input type="text" id="revName" required placeholder="Your Name" class="bg-white border border-slate-200 rounded-xl p-3.5 text-sm w-full focus:outline-none focus:ring-2 focus:ring-emerald-500 transition">
-                    <select id="revStars" class="bg-white border border-slate-200 rounded-xl p-3.5 text-sm w-full focus:outline-none focus:ring-2 focus:ring-emerald-500 transition">
-                        <option value="5">5 Stars ★★★★★</option>
-                        <option value="4">4 Stars ★★★★☆</option>
-                        <option value="3">3 Stars ★★★☆☆</option>
-                    </select>
-                </div>
-                <textarea id="revText" required rows="3" placeholder="How was our cab cleanliness, driver politeness, and route knowledge?..." class="bg-white border border-slate-200 rounded-xl p-3.5 text-sm w-full focus:outline-none focus:ring-2 focus:ring-emerald-500 transition"></textarea>
-                <button type="submit" class="bg-emerald-700 text-white px-6 py-3 rounded-xl text-sm font-bold hover:bg-emerald-800 transition shadow-xs cursor-pointer">
-                    Post Travel Review
-                </button>
-            </form>
-        </div>
-    </section>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-500 text-center py-10 border-t border-slate-800 text-xs font-medium">
-        <p class="mb-2">&copy; 2026 Ambigai Tourism Ooty. All Rights Reserved.</p>
-        <p class="text-slate-600">Premium Tour Cab Operators & Local Nilgiri Sightseeing Experts.</p>
-    </footer>
+<section>
 
-    <!-- Interactive Scripts Layout -->
-    <script>
-        const WHATSAPP_NUMBER = "919626172090"; 
+<h2 class="title">Our Fleet</h2>
 
-        function sendToWhatsApp(event) {
-            event.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const date = document.getElementById('date').value;
-            const car = document.getElementById('car').value;
-            const packageTour = document.getElementById('package').value;
+<div class="cards">
 
-            const messageText = `Hello Ambigai Tourism Ooty! I would like to request custom rates for a cab itinerary Plan:%0A%0A` +
-                                `• *Client Name:* ${encodeURIComponent(name)}%0A` +
-                                `• *Travel Date:* ${encodeURIComponent(date)}%0A` +
-                                `• *Vehicle Type:* ${encodeURIComponent(car)}%0A` +
-                                `• *Tour Circuit:* ${encodeURIComponent(packageTour)}`;
+<div class="card">
+<img src="etios.jpg">
+<h3>Sedan</h3>
+<p>Comfortable 4 Seater for city and outstation trips.</p>
+</div>
 
-            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${messageText}`;
-            window.open(whatsappUrl, '_blank');
-        }
+<div class="card">
+<img src="bolero.jpg">
+<h3>SUV</h3>
+<p>Spacious SUV for family tours.</p>
+</div>
 
-        function addReview(event) {
-            event.preventDefault();
-            
-            const name = document.getElementById('revName').value;
-            const stars = parseInt(document.getElementById('revStars').value);
-            const text = document.getElementById('revText').value;
+<div class="card">
+<img src="ertiga.jpg">
+<h3>Ertiga</h3>
+<p>Premium 7 Seater vehicle.</p>
+</div>
 
-            let starHtml = '';
-            for(let i=0; i<5; i++) {
-                starHtml += i < stars ? '<i class="fa-solid fa-star"></i>' : '<i class="fa-solid fa-star text-slate-200"></i>';
-            }
+<div class="card">
+<img src="tempo.jpg">
+<h3>Tempo Traveller</h3>
+<p>14 to 25 Seater group travel.</p>
+</div>
 
-            const newReview = document.createElement('div');
-            newReview.className = "bg-white p-6 rounded-xl border border-slate-100 shadow-xs transition duration-500";
-            newReview.innerHTML = `
-                <div class="flex justify-between items-start mb-3">
-                    <div>
-                        <h4 class="font-bold text-slate-900">${name}</h4>
-                        <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Visited Just Now</span>
-                    </div>
-                    <div class="text-amber-400 text-sm">${starHtml}</div>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed">${text}</p>
-            `;
+</div>
 
-            const container = document.getElementById('reviewsContainer');
-            container.insertBefore(newReview, container.firstChild);
+</section>
 
-            document.getElementById('revName').value = '';
-            document.getElementById('revText').value = '';
-        }
-    </script>
+<section>
+
+<h2 class="title">Customer Reviews</h2>
+
+<div class="cards">
+
+<div class="review">
+<h4>★★★★★</h4>
+<p>Excellent cab service in Ooty. Clean vehicle and friendly driver.</p>
+<strong>Ramesh</strong>
+</div>
+
+<div class="review">
+<h4>★★★★★</h4>
+<p>Very professional service. Highly recommended.</p>
+<strong>Priya</strong>
+</div>
+
+<div class="review">
+<h4>★★★★★</h4>
+<p>Affordable price and amazing sightseeing experience.</p>
+<strong>Arun</strong>
+</div>
+
+</div>
+
+</section>
+
+<section class="contact">
+
+<h2>Contact Us</h2>
+
+<p>📍 Anna Nagar, Ooty, Tamil Nadu - 643214</p>
+
+<p>📞 9626172090</p>
+
+<p>✉ sragency745@gmail.com</p>
+
+<br>
+
+<a class="btn"
+href="https://wa.me/919626172090">
+Book Now
+</a>
+
+</section>
+
+<footer>
+
+© 2026 Ambigai Tourism | All Rights Reserved
+
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/919626172090">
+💬
+</a>
+
 </body>
 </html>
