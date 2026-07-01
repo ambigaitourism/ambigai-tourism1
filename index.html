@@ -3,414 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ambigai Tourism - Ooty Travels</title>
-    <style>
-        /* --- Reset & Base Styles --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: #f4f7f6;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* --- Header & Navigation --- */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #2d6a4f;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #495057;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #2d6a4f;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1590053412035-cb47fcb1bfdc?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-            animation: slideDown 1.2s ease-out;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            max-width: 600px;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-            animation: fadeIn 2s ease-in;
-        }
-
-        /* --- Animations --- */
-        @keyframes slideDown {
-            0% {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        /* --- Interactive Button Style --- */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #2d6a4f;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(45, 106, 79, 0.4);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .btn:hover {
-            background-color: #1b4332;
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(45, 106, 79, 0.6);
-        }
-
-        /* --- Core Content Sections --- */
-        section {
-            padding: 100px 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #2d6a4f;
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: #52b788;
-            margin: 10px auto 0;
-        }
-
-        /* --- Destination Grid --- */
-        .destinations {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.4s ease;
-            position: relative;
-            top: 0;
-        }
-
-        .card:hover {
-            top: -10px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
-        .card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .card:hover img {
-            transform: scale(1.1);
-        }
-
-        .card-content {
-            padding: 25px;
-        }
-
-        .card-content h3 {
-            margin-bottom: 10px;
-            color: #1b4332;
-        }
-
-        .card-content p {
-            color: #6c757d;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        /* --- Services Section --- */
-        .services-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .service-box {
-            background: #fff;
-            padding: 40px 30px;
-            border-radius: 10px;
-            text-align: center;
-            flex: 1;
-            min-width: 250px;
-            border-bottom: 4px solid #52b788;
-            transition: transform 0.3s;
-        }
-
-        .service-box:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-box h3 {
-            color: #2d6a4f;
-            margin-bottom: 15px;
-        }
-
-        /* --- Booking / Contact Form --- */
-        .booking-container {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #495057;
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ced4da;
-            border-radius: 8px;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            border-color: #2d6a4f;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 14px;
-            background-color: #2d6a4f;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .submit-btn:hover {
-            background-color: #1b4332;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background-color: #1b4332;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            header { padding: 20px; }
-            nav ul { display: none; } /* Kept simple for raw CSS template */
-            .hero h1 { font-size: 2.5rem; }
-            section { padding: 60px 20px; }
-        }
-    </style>
+    <title>Ambigai Tourism Ooty | Premium Luxury Travel Concierge</title>
+    <!-- FontAwesome Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <div class="logo">Ambigai Tourism</div>
-        <nav>
-            <ul>
+    <!-- Cinematic Hero Section with Parallax Backdrop Overlay -->
+    <header id="home" class="parallax-hero">
+        <div class="parallax-bg"></div>
+        <div class="hero-overlay"></div>
+        
+        <nav class="luxury-navbar">
+            <div class="logo">AMBIGAI <span class="gold-text">TOURISM</span></div>
+            <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#destinations">Destinations</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#book">Book a Trip</a></li>
+                <li><a href="#fleet">Premium Fleet</a></li>
+                <li><a href="#packages">Tour Packages</a></li>
+                <li><a href="#reviews">Testimonials</a></li>
             </ul>
         </nav>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="premium-tag"><i class="fas fa-crown"></i> Ooty's Finest Chauffeur Experience</span>
+                <h1>Crafting Exceptional Journeys</h1>
+                <p>Traverse the majestic queen of hill stations in ultra-premium, sanitized vehicles driven by elite local route experts.</p>
+                <div class="hero-actions">
+                    <a href="#packages" class="btn-secondary-luxury">Explore Packages</a>
+                    <a href="https://wa.me/919626172090?text=Hello%20Ambigai%20Tourism,%20I%20want%20to%20book%20an%20elite%20cab%20package%20in%20Ooty." 
+                       class="btn-whatsapp-premium" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Reserve Instant Luxury
+                    </a>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <section id="home" class="hero">
-        <h1>Experience the Magic of Ooty</h1>
-        <p>Explore the Queen of Hill Stations with Ambigai Tourism. Unforgettable journeys customized perfectly for you.</p>
-        <a href="#book" class="btn">Start Your Journey</a>
+    <!-- Stat Counter Grid Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-smile"></i></div>
+                <h2 class="counter">15,000+</h2>
+                <p>Happy Voyagers</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-road"></i></div>
+                <h2 class="counter">2.5M+</h2>
+                <p>Kilometers Safe Travel</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-car"></i></div>
+                <h2 class="counter">45+</h2>
+                <p>Premium Fleets</p>
+            </div>
+        </div>
     </section>
 
-    <section id="destinations">
-        <h2 class="section-title">Popular Spots to Explore</h2>
-        <div class="destinations">
+    <!-- Curated Interactive Tour Packages Section -->
+    <section id="packages" class="packages-section">
+        <h2 class="section-title">Signature Ooty Itineraries</h2>
+        <div class="title-gold-line"></div>
+        <p class="section-subtitle">Select a destination profile to instantly view custom trip options.</p>
+
+        <div class="packages-grid">
+            <!-- Package 1 -->
+            <div class="package-card" onclick="selectPackage('Ooty Local Sightseeing (Botanical Garden, Lake, Doddabetta Peak)')">
+                <div class="package-img" style="background-image: url('https://images.unsplash.com/photo-1589982442475-433b5c3ee3bb?q=80&w=600');"></div>
+                <div class="package-info">
+                    <span class="pkg-duration">Full Day Tour</span>
+                    <h3>Ooty Classic Heritage</h3>
+                    <p>Doddabetta Peak, Botanical & Rose Gardens, Ooty Boat Lake, and Tea Museum.</p>
+                    <span class="pkg-action-text">Select Package <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+            <!-- Package 2 -->
+            <div class="package-card" onclick="selectPackage('Coonoor Day Tour (Sims Park, Dolphin Nose, Toy Train ride)')">
+                <div class="package-img" style="background-image: url('https://res.cloudinary.com/voyehomes/image/upload/w_1280,f_auto,c_scale/v1738610910/property/136/image/69a630ec-d429-4aef-a3ad-7cc8dcec525b.jpg');"></div>
+                <div class="package-info">
+                    <span class="pkg-duration">Full Day Tour</span>
+                    <h3>Coonoor Exotic Valley</h3>
+                    <p>Sim's Park, Dolphin's Nose, Lamb's Rock, and Nilgiri Mountain Toy Train tracks.</p>
+                    <span class="pkg-action-text">Select Package <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+            <!-- Package 3 -->
+            <div class="package-card" onclick="selectPackage('Pykara Pine Forest Shooting Spot Tour')">
+                <div class="package-img" style="background-image: url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=600');"></div>
+                <div class="package-info">
+                    <span class="pkg-duration">Full Day Tour</span>
+                    <h3>Pykara Cinematic Lake</h3>
+                    <p>Pine Forests, 9th Mile Shooting Spot, Pykara Waterfalls, and Premium Boating.</p>
+                    <span class="pkg-action-text">Select Package <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User-Friendly Interactive Trip Estimator Engine -->
+    <section id="estimator" class="estimator-section">
+        <div class="glass-container estimator-box">
+            <h2 class="section-title text-white">Dynamic Pricing Matrix</h2>
+            <div class="title-gold-line"></div>
             
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1626596121481-37d3fa8f1680?auto=format&fit=crop&w=600&q=80" alt="Ooty Lake">
-                <div class="card-content">
-                    <h3>Ooty Botanical Gardens</h3>
-                    <p>Famed for its lush terraced layouts, rare plant species, and the serene fossil tree trunk estimated to be millions of years old.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Doddabetta Peak">
-                <div class="card-content">
-                    <h3>Doddabetta Peak</h3>
-                    <p>Catch breathtaking, panoramic views of the Nilgiri hills from the highest vantage point in the region.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?auto=format&fit=crop&w=600&q=80" alt="Tea Gardens">
-                <div class="card-content">
-                    <h3>Emerald Tea Estates</h3>
-                    <p>Stroll through the sprawling, velvety-green rows of aromatic tea plantations and soak in the fresh mountain air.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="services" style="background-color: #eaf5f0; max-width: 100%;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 class="section-title">Our Premium Services</h2>
-            <div class="services-container">
-                <div class="service-box">
-                    <h3>Custom Sightseeing</h3>
-                    <p>Tailor-made itineraries to make sure you visit the spots you care about at your own pace.</p>
-                </div>
-                <div class="service-box">
-                    <h3>Hassle-Free Cabs</h3>
-                    <p>Clean, dependable vehicles driven by experienced local guides who know the hills inside out.</p>
-                </div>
-                <div class="service-box">
-                    <h3>Resort Booking</h3>
-                    <p>We partner with the finest hotels and homestays to secure the perfect cozy stay for you.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="book">
-        <h2 class="section-title">Plan Your Tour</h2>
-        <div class="booking-container">
-            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for choosing Ambigai Tourism! We will contact you shortly to plan your trip.');">
-                <div class="form-group">
-                    <label for="name">Your Full Name</label>
-                    <input type="text" id="name" required placeholder="Enter your name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" required placeholder="Enter your email">
-                </div>
-                <div class="form-group">
-                    <label for="destination">Preferred Experience</label>
-                    <select id="destination">
-                        <option value="ooty-sightseeing">Complete Ooty Sightseeing</option>
-                        <option value="honeymoon">Honeymoon Special Package</option>
-                        <option value="adventure">Trekking & Adventure Package</option>
-                        <option value="custom">Custom Family Tour</option>
+            <div class="estimator-inputs">
+                <div class="input-group">
+                    <label for="carSelect">Elite Vehicle Choice</label>
+                    <select id="carSelect" onchange="calculateEstimate()">
+                        <option value="12">Premium Sedan (Dzire / Etios) - Min ₹12/km</option>
+                        <option value="18">Executive SUV (Ertiga / XUV) - Min ₹18/km</option>
+                        <option value="22">VIP Toyota Innova Crysta - Min ₹22/km</option>
+                        <option value="26">Grand Tempo Traveller (12-25 Seater) - Min ₹26/km</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="date">Travel Date</label>
-                    <input type="date" id="date" required>
+                <div class="input-group">
+                    <label for="distanceInput">Estimated Route Length (Kilometers)</label>
+                    <input type="number" id="distanceInput" value="100" min="1" oninput="calculateEstimate()">
                 </div>
-                <div class="form-group">
-                    <label for="notes">Special Requirements / Notes</label>
-                    <textarea id="notes" rows="4" placeholder="Let us know how we can make your trip perfect..."></textarea>
+                <div class="input-group">
+                    <label for="selectedPackageDisplay">Selected Itinerary</label>
+                    <input type="text" id="selectedPackageDisplay" value="Custom Tour Route" readonly>
                 </div>
-                <button type="submit" class="submit-btn">Request Itinerary</button>
-            </form>
+            </div>
+            <div class="estimation-result">
+                <h3>Estimated Total Base Fare: <span id="fareDisplay" class="gold-text">Scale pricing...</span></h3>
+                <button class="btn-whatsapp-premium style-btn-fit" id="dynamicWhatsAppBtn" onclick="triggerBookingLink()">
+                    <i class="fab fa-whatsapp"></i> Book This Configuration
+                </button>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Ambigai Tourism. Crafting Perfect Memories in Ooty. All Rights Reserved.</p>
+    <!-- Luxury Fleet Showcase Section -->
+    <section id="fleet" class="fleet-section">
+        <h2 class="section-title">The Ambigai Executive Fleet</h2>
+        <div class="title-gold-line"></div>
+        <p class="section-subtitle">Chauffeur-driven iconic vehicles maintained in showroom condition.</p>
+        
+        <div class="fleet-grid">
+            <!-- Premium Sedan -->
+            <div class="luxury-car-card">
+                <div class="car-image-container" style="background-image: url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=600');">
+                    <span class="seat-badge">4+1 Seater</span>
+                </div>
+                <div class="car-details">
+                    <h3>Swift Dzire / Etios</h3>
+                    <div class="amenities-list">
+                        <span><i class="fas fa-snowflake"></i> Climate AC</span>
+                        <span><i class="fas fa-suitcase"></i> Ample Boot</span>
+                    </div>
+                    <a href="https://wa.me/919626172090?text=Hi%20Ambigai%20Tourism,%20I'm%20interested%20in%20booking%20the%20Premium%204-Seater%20Sedan." class="btn-card-booking" target="_blank">Book Sedan</a>
+                </div>
+            </div>
+
+            <!-- Executive SUV -->
+            <div class="luxury-car-card">
+                <div class="car-image-container" style="background-image: url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=600');">
+                    <span class="seat-badge">6+1 Seater</span>
+                </div>
+                <div class="car-details">
+                    <h3>Mahindra XUV / Ertiga</h3>
+                    <div class="amenities-list">
+                        <span><i class="fas fa-shield-alt"></i> Roof Carrier</span>
+                        <span><i class="fas fa-mountain"></i> Hill Descent</span>
+                    </div>
+                    <a href="https://wa.me/919626172090?text=Hi%20Ambigai%20Tourism,%20I'm%20interested%20in%20booking%20the%20Executive%20SUV." class="btn-card-booking" target="_blank">Book SUV</a>
+                </div>
+            </div>
+
+            <!-- Toyota Innova Crysta -->
+            <div class="luxury-car-card">
+                <div class="car-image-container" style="background-image: url('https://images.unsplash.com/photo-1619364726002-dfd4fdaee5f2?q=80&w=600');">
+                    <span class="seat-badge">7+1 Seater</span>
+                </div>
+                <div class="car-details">
+                    <h3>Toyota Innova Crysta</h3>
+                    <div class="amenities-list">
+                        <span><i class="fas fa-couch"></i> Captain Seats</span>
+                        <span><i class="fas fa-wifi"></i> VIP Comfort</span>
+                    </div>
+                    <a href="https://wa.me/919626172090?text=Hi%20Ambigai%20Tourism,%20I%20want%20to%20book%20your%20Luxury%20Toyota%20Innova%20Crysta." class="btn-card-booking" target="_blank">Book Innova</a>
+                </div>
+            </div>
+
+            <!-- Force Traveller -->
+            <div class="luxury-car-card">
+                <div class="car-image-container" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=600');">
+                    <span class="seat-badge">12 - 25 Seater</span>
+                </div>
+                <div class="car-details">
+                    <h3>Luxury Tempo Traveller</h3>
+                    <div class="amenities-list">
+                        <span><i class="fas fa-tv"></i> LED Screen</span>
+                        <span><i class="fas fa-volume-up"></i> Premium Audio</span>
+                    </div>
+                    <a href="https://wa.me/919626172090?text=Hi%20Ambigai%20Tourism,%20I'm%20interested%20in%20booking%20a%20Luxury%20Tempo%20Traveller%20Group%20Coach." class="btn-card-booking" target="_blank">Book Coach</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Super Attractive Guest Testimonial Slider Section -->
+    <section id="reviews" class="reviews-section-luxury">
+        <h2 class="section-title text-white">What Our Guests Say</h2>
+        <div class="title-gold-line"></div>
+        
+        <div class="reviews-slider-box glass-container">
+            <!-- Review 1 -->
+            <div class="review-slide active">
+                <div class="review-stars-container">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-quote">"The vehicle look was super premium and attractive, but what really impressed us was the driver's elite etiquette. Ambigai Tourism transformed our family vacation into a VIP tour."</p>
+                <div class="author-details">
+                    <h4>Vikram Malhotra</h4>
+                    <span>Mumbai, India</span>
+                </div>
+            </div>
+            
+            <!-- Review 2 -->
+            <div class="review-slide">
+                <div class="review-stars-container">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-quote">"Absolute peak performance! Booked an Innova Crysta for outstation hill points. Beautiful transparent rates and instant interactions on WhatsApp."</p>
+                <div class="author-details">
+                    <h4>Anjali Deshmukh</h4>
+                    <span>Pune, India</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-navigation-dots">
+            <span class="navigation-dot active" onclick="jumpToSlide(0)"></span>
+            <span class="navigation-dot" onclick="jumpToSlide(1)"></span>
+        </div>
+    </section>
+
+    <!-- Persistent Floating Luxury Concierge Button -->
+    <a href="https://wa.me/919626172090?text=Hi%20Ambigai%20Tourism,%20I'm%20planning%20an%20Ooty%20trip%20and%20would%20like%20to%20get%20a%20rate%20card." 
+       class="floating-whatsapp-luxury" target="_blank" title="Instant Luxury Concierge Support">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer Area -->
+    <footer class="luxury-footer-wrapper">
+        <div class="footer-inner-content">
+            <div class="footer-branding">AMBIGAI <span class="gold-text">TOURISM OOTY</span></div>
+            <div class="footer-contact-info"><i class="fas fa-phone-alt gold-text"></i> VIP Desk: +91 9626172090</div>
+        </div>
+        <p class="footer-copyright-text">&copy; 2026 Ambigai Tourism Ooty. Engineered for Premium Hill Travel.</p>
     </footer>
 
+    <!-- Link to Javascript -->
+    <script src="script.js"></script>
 </body>
 </html>
