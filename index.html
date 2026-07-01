@@ -1,320 +1,416 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ambigai Tourism | Ooty Travels</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambigai Tourism - Ooty Travels</title>
+    <style>
+        /* --- Reset & Base Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            overflow-x: hidden;
+        }
 
-<style>
+        /* --- Header & Navigation --- */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-}
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2d6a4f;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-body{
-background:#f8f9fa;
-color:#333;
-}
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
 
-header{
-background:#0d3b66;
-padding:15px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:1000;
-}
+        nav ul li {
+            margin-left: 30px;
+        }
 
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-}
+        nav ul li a {
+            text-decoration: none;
+            color: #495057;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
 
-.logo img{
-width:55px;
-height:55px;
-border-radius:50%;
-}
+        nav ul li a:hover {
+            color: #2d6a4f;
+        }
 
-.logo h2{
-color:white;
-}
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1590053412035-cb47fcb1bfdc?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-font-weight:500;
-}
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            animation: slideDown 1.2s ease-out;
+        }
 
-.hero{
-height:90vh;
-background:url("hero.jpg") center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-position:relative;
-}
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+            animation: fadeIn 2s ease-in;
+        }
 
-.hero::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.55);
-}
+        /* --- Animations --- */
+        @keyframes slideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.hero-content{
-position:relative;
-color:white;
-}
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
 
-.hero h1{
-font-size:55px;
-}
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
 
-.hero p{
-margin:20px 0;
-font-size:20px;
-}
+        /* --- Interactive Button Style --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #2d6a4f;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(45, 106, 79, 0.4);
+            animation: float 3s ease-in-out infinite;
+        }
 
-.btn{
-display:inline-block;
-padding:15px 30px;
-background:#ff9800;
-color:white;
-text-decoration:none;
-border-radius:8px;
-font-weight:bold;
-}
+        .btn:hover {
+            background-color: #1b4332;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(45, 106, 79, 0.6);
+        }
 
-section{
-padding:70px 8%;
-}
+        /* --- Core Content Sections --- */
+        section {
+            padding: 100px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.title{
-text-align:center;
-font-size:35px;
-margin-bottom:40px;
-color:#0d3b66;
-}
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d6a4f;
+            margin-bottom: 50px;
+            position: relative;
+        }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #52b788;
+            margin: 10px auto 0;
+        }
 
-.card{
-background:white;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-transition:.3s;
-}
+        /* --- Destination Grid --- */
+        .destinations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
 
-.card:hover{
-transform:translateY(-8px);
-}
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            top: 0;
+        }
 
-.card img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
+        .card:hover {
+            top: -10px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
 
-.card h3{
-padding:15px;
-}
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
 
-.card p{
-padding:0 15px 20px;
-}
+        .card:hover img {
+            transform: scale(1.1);
+        }
 
-.review{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
+        .card-content {
+            padding: 25px;
+        }
 
-.review h4{
-color:#ff9800;
-margin-bottom:10px;
-}
+        .card-content h3 {
+            margin-bottom: 10px;
+            color: #1b4332;
+        }
 
-.contact{
-background:#0d3b66;
-color:white;
-text-align:center;
-padding:50px;
-}
+        .card-content p {
+            color: #6c757d;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
 
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-color:white;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:30px;
-text-decoration:none;
-box-shadow:0 5px 10px rgba(0,0,0,.3);
-}
+        /* --- Services Section --- */
+        .services-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-footer{
-background:#08263d;
-color:white;
-text-align:center;
-padding:20px;
-}
+        .service-box {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+            border-bottom: 4px solid #52b788;
+            transition: transform 0.3s;
+        }
 
-</style>
+        .service-box:hover {
+            transform: translateY(-5px);
+        }
 
+        .service-box h3 {
+            color: #2d6a4f;
+            margin-bottom: 15px;
+        }
+
+        /* --- Booking / Contact Form --- */
+        .booking-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: #2d6a4f;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #2d6a4f;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #1b4332;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #1b4332;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header { padding: 20px; }
+            nav ul { display: none; } /* Kept simple for raw CSS template */
+            .hero h1 { font-size: 2.5rem; }
+            section { padding: 60px 20px; }
+        }
+    </style>
 </head>
 <body>
 
-<header>
+    <header>
+        <div class="logo">Ambigai Tourism</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#book">Book a Trip</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="logo">
-<img src="logo.webp">
-<h2>Ambigai Tourism</h2>
-</div>
+    <section id="home" class="hero">
+        <h1>Experience the Magic of Ooty</h1>
+        <p>Explore the Queen of Hill Stations with Ambigai Tourism. Unforgettable journeys customized perfectly for you.</p>
+        <a href="#book" class="btn">Start Your Journey</a>
+    </section>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">Fleet</a>
-<a href="#">Packages</a>
-<a href="#">Reviews</a>
-<a href="#">Contact</a>
-</nav>
+    <section id="destinations">
+        <h2 class="section-title">Popular Spots to Explore</h2>
+        <div class="destinations">
+            
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1626596121481-37d3fa8f1680?auto=format&fit=crop&w=600&q=80" alt="Ooty Lake">
+                <div class="card-content">
+                    <h3>Ooty Botanical Gardens</h3>
+                    <p>Famed for its lush terraced layouts, rare plant species, and the serene fossil tree trunk estimated to be millions of years old.</p>
+                </div>
+            </div>
 
-</header>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Doddabetta Peak">
+                <div class="card-content">
+                    <h3>Doddabetta Peak</h3>
+                    <p>Catch breathtaking, panoramic views of the Nilgiri hills from the highest vantage point in the region.</p>
+                </div>
+            </div>
 
-<section class="hero">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?auto=format&fit=crop&w=600&q=80" alt="Tea Gardens">
+                <div class="card-content">
+                    <h3>Emerald Tea Estates</h3>
+                    <p>Stroll through the sprawling, velvety-green rows of aromatic tea plantations and soak in the fresh mountain air.</p>
+                </div>
+            </div>
 
-<div class="hero-content">
+        </div>
+    </section>
 
-<h1>Explore Ooty With Ambigai Tourism</h1>
+    <section id="services" style="background-color: #eaf5f0; max-width: 100%;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Our Premium Services</h2>
+            <div class="services-container">
+                <div class="service-box">
+                    <h3>Custom Sightseeing</h3>
+                    <p>Tailor-made itineraries to make sure you visit the spots you care about at your own pace.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Hassle-Free Cabs</h3>
+                    <p>Clean, dependable vehicles driven by experienced local guides who know the hills inside out.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Resort Booking</h3>
+                    <p>We partner with the finest hotels and homestays to secure the perfect cozy stay for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<p>Luxury Cab Service • Local Sightseeing • Outstation Trips</p>
+    <section id="book">
+        <h2 class="section-title">Plan Your Tour</h2>
+        <div class="booking-container">
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for choosing Ambigai Tourism! We will contact you shortly to plan your trip.');">
+                <div class="form-group">
+                    <label for="name">Your Full Name</label>
+                    <input type="text" id="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="destination">Preferred Experience</label>
+                    <select id="destination">
+                        <option value="ooty-sightseeing">Complete Ooty Sightseeing</option>
+                        <option value="honeymoon">Honeymoon Special Package</option>
+                        <option value="adventure">Trekking & Adventure Package</option>
+                        <option value="custom">Custom Family Tour</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Travel Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Special Requirements / Notes</label>
+                    <textarea id="notes" rows="4" placeholder="Let us know how we can make your trip perfect..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Request Itinerary</button>
+            </form>
+        </div>
+    </section>
 
-<a class="btn"
-href="https://wa.me/919626172090?text=Hello%20Ambigai%20Tourism%20I%20want%20to%20book%20a%20cab">
-Book on WhatsApp
-</a>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">Our Fleet</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="etios.jpg">
-<h3>Sedan</h3>
-<p>Comfortable 4 Seater for city and outstation trips.</p>
-</div>
-
-<div class="card">
-<img src="bolero.jpg">
-<h3>SUV</h3>
-<p>Spacious SUV for family tours.</p>
-</div>
-
-<div class="card">
-<img src="ertiga.jpg">
-<h3>Ertiga</h3>
-<p>Premium 7 Seater vehicle.</p>
-</div>
-
-<div class="card">
-<img src="tempo.jpg">
-<h3>Tempo Traveller</h3>
-<p>14 to 25 Seater group travel.</p>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">Customer Reviews</h2>
-
-<div class="cards">
-
-<div class="review">
-<h4>★★★★★</h4>
-<p>Excellent cab service in Ooty. Clean vehicle and friendly driver.</p>
-<strong>Ramesh</strong>
-</div>
-
-<div class="review">
-<h4>★★★★★</h4>
-<p>Very professional service. Highly recommended.</p>
-<strong>Priya</strong>
-</div>
-
-<div class="review">
-<h4>★★★★★</h4>
-<p>Affordable price and amazing sightseeing experience.</p>
-<strong>Arun</strong>
-</div>
-
-</div>
-
-</section>
-
-<section class="contact">
-
-<h2>Contact Us</h2>
-
-<p>📍 Anna Nagar, Ooty, Tamil Nadu - 643214</p>
-
-<p>📞 9626172090</p>
-
-<p>✉ sragency745@gmail.com</p>
-
-<br>
-
-<a class="btn"
-href="https://wa.me/919626172090">
-Book Now
-</a>
-
-</section>
-
-<footer>
-
-© 2026 Ambigai Tourism | All Rights Reserved
-
-</footer>
-
-<a class="whatsapp"
-href="https://wa.me/919626172090">
-💬
-</a>
+    <footer>
+        <p>&copy; 2026 Ambigai Tourism. Crafting Perfect Memories in Ooty. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
