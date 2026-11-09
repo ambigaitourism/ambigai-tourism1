@@ -1,3 +1,39 @@
-const $=id=>document.getElementById(id);$('year').textContent=new Date().getFullYear();const dateInput=$('travelDate');const now=new Date();dateInput.min=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10);
-$('bookingForm').addEventListener('submit',e=>{e.preventDefault();if(!$('bookingForm').reportValidity())return;const d={name:$('customerName').value.trim(),phone:$('customerPhone').value.trim(),trip:$('tripType').value,pickup:$('pickup').value.trim(),destination:$('destination').value.trim(),date:$('travelDate').value,cab:$('cabType').value,passengers:$('passengers').value,notes:$('notes').value.trim()};const msg=`Hello SR Ambigai Tourism! I would like to book a cab.\n\nName: ${d.name}\nMy phone: ${d.phone}\nTrip type: ${d.trip}\nPickup: ${d.pickup}\nDestination: ${d.destination}\nTravel date: ${d.date}\nPreferred vehicle: ${d.cab}\nPassengers: ${d.passengers}\nExtra details: ${d.notes||'None'}\n\nPlease confirm availability and best price.`;$('bookingNotice').textContent='Your booking details are ready. WhatsApp will open so you can send the request to SR Ambigai Tourism.';$('bookingNotice').classList.add('show');window.open('https://wa.me/919626172090?text='+encodeURIComponent(msg),'_blank','noopener');});
-$('openReview').addEventListener('click',()=>{$('reviewForm').classList.toggle('open');$('reviewForm').scrollIntoView({behavior:'smooth',block:'nearest'});});let rating=5;$('ratingButtons').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{rating=Number(b.dataset.rating);$('ratingButtons').querySelectorAll('button').forEach(x=>x.classList.toggle('selected',Number(x.dataset.rating)===rating));}));$('reviewForm').addEventListener('submit',e=>{e.preventDefault();if(!$('reviewForm').reportValidity())return;const name=$('reviewName').value.trim();const content=$('reviewText').value.trim();const article=document.createElement('article');article.className='review';const stars=document.createElement('div');stars.className='stars';stars.textContent='★'.repeat(rating)+'☆'.repeat(5-rating);const quote=document.createElement('blockquote');quote.textContent='“'+content+'”';const row=document.createElement('div');row.className='reviewer';const avatar=document.createElement('div');avatar.className='avatar';avatar.textContent=name.charAt(0).toUpperCase();const details=document.createElement('div');const strong=document.createElement('strong');strong.textContent=name;const small=document.createElement('small');small.textContent='Guest review';details.append(strong,small);row.append(avatar,details);article.append(stars,quote,row);$('reviewList').prepend(article);$('reviewNotice').textContent='Thank you! Your review has been added to this page preview. It will not be saved after you close or refresh this preview.';$('reviewNotice').classList.add('show');$('reviewForm').reset();rating=5;$('ratingButtons').querySelectorAll('button').forEach(x=>x.classList.toggle('selected',Number(x.dataset.rating)===5));article.scrollIntoView({behavior:'smooth',block:'center'});});
+const menuButton = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav-links');
+menuButton.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.textContent = open ? '×' : '☰';
+});
+nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+  nav.classList.remove('open');
+  menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.textContent = '☰';
+}));
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Prevent selecting a travel date in the past.
+const dateInput = document.getElementById('travelDate');
+const today = new Date();
+const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+dateInput.min = localToday;
+
+document.getElementById('bookingForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+  if (!this.reportValidity()) return;
+  const data = new FormData(this);
+  const message = [
+    'Hello Ambigai Tourism! I would like to request a cab booking.',
+    '',
+    `Name: ${data.get('name')}`,
+    `Phone: ${data.get('phone')}`,
+    `Pickup: ${data.get('pickup')}`,
+    `Destination: ${data.get('destination')}`,
+    `Travel date: ${data.get('date')}`,
+    `Trip type: ${data.get('tripType')}`,
+    `Preferred vehicle: ${data.get('vehicle')}`,
+    '',
+    'Please share availability and the best price. Thank you!'
+  ].join('\\n');
+  window.open(`https://wa.me/919626172090?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+});
